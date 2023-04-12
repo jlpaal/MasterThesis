@@ -1,0 +1,193 @@
+% Encoding: UTF-8
+
+@Article{Wessnitzer,
+  author    = {Wessnitzer, Jan and Young, Joanna M and Armstrong, J Douglas and Webb, Barbara},
+  title     = {A model of non-elemental olfactory learning in Drosophila},
+  journal   = {Journal of computational neuroscience},
+  year      = {2012},
+  volume    = {32},
+  number    = {2},
+  pages     = {197--212},
+  publisher = {Springer},
+}
+
+@Article{Emmert2020,
+  author    = {Frank Emmert-Streib and Zhen Yang and Han Feng and Han Feng and Shailesh Tripathi and Shailesh Tripathi and Matthias Dehmer and Matthias Dehmer and Matthias Dehmer},
+  title     = {An Introductory Review of Deep Learning for Prediction Models With Big Data},
+  journal   = {Frontiers in Artificial Intelligence},
+  year      = {2020},
+  volume    = {3},
+  month     = {2},
+  issn      = {2624-8212},
+  doi       = {10.3389/frai.2020.00004},
+  url       = {https://www.frontiersin.org/article/10.3389/frai.2020.00004/full},
+  abstract  = {Deep learning models stand for a new learning paradigm in artificial intelligence (AI) and machine learning. Recent breakthrough results in image analysis and speech recognition have generated a massive interest in this field because also applications in many other domains providing big data seem possible. On a downside, the mathematical and computational methodology underlying deep learning models is very challenging, especially for interdisciplinary scientists. For this reason, we present in this paper an introductory review of deep learning approaches including Deep Feedforward Neural Networks (D-FFNN), Convolutional Neural Networks (CNNs), Deep Belief Networks (DBNs), Autoencoders (AEs), and Long Short-Term Memory (LSTM) networks. These models form the major core architectures of deep learning models currently used and should belong in any data scientist's toolbox. Importantly, those core architectural building blocks can be composed flexibly—in an almost Lego-like manner—to build new application-specific network architectures. Hence, a basic understanding of these network architectures is important to be prepared for future developments in AI.},
+  keywords  = {deep learning, artificial intelligence, machine learning, neural networks, prediction models, data science},
+  publisher = {Frontiers Media S.A.},
+}
+
+@Article{Eugene2003,
+  author  = {Eugene, M},
+  title   = {Izhikevich: Simple Model of Spiking Neurons},
+  journal = {IEEE Transactions on Neural Networks},
+  year    = {2003},
+  volume  = {14},
+  number  = {6},
+}
+
+@Article{Young2011,
+  author    = {Young, JM and Wessnitzer, J and Armstrong, JD and Webb, Barbara},
+  title     = {Elemental and non-elemental olfactory learning in Drosophila},
+  journal   = {Neurobiology of learning and memory},
+  year      = {2011},
+  volume    = {96},
+  number    = {2},
+  pages     = {339--352},
+  publisher = {Elsevier},
+}
+
+@Book{Izhikevich2007,
+  author = {Eugene M. Izhikevich},
+  title  = {Dynamical Systems in Neuroscience: The Geometry of Excitability and Bursting},
+  year   = {2007},
+  editor = {The MIT Press},
+  doi    = {https://doi.org/10.7551/mitpress/2526.001.0001},
+  url    = {https://www.izhikevich.org/publications/dsn.pdf},
+}
+
+@Article{Julia,
+  author    = {Bezanson, Jeff and Edelman, Alan and Karpinski, Stefan and Shah, Viral B},
+  title     = {Julia: A fresh approach to numerical computing},
+  journal   = {SIAM {R}eview},
+  year      = {2017},
+  volume    = {59},
+  number    = {1},
+  pages     = {65--98},
+  doi       = {10.1137/141000671},
+  url       = {https://epubs.siam.org/doi/10.1137/141000671},
+  publisher = {SIAM},
+}
+
+@Article{Moya2020,
+  author   = {E. Ulises Moya-Sánchez and Sebastiá Xambó-Descamps and Abraham {Sánchez Pérez} and Sebastián Salazar-Colores and Jorge Martínez-Ortega and Ulises Cortés},
+  title    = {A bio-inspired quaternion local phase CNN layer with contrast invariance and linear sensitivity to rotation angles},
+  journal  = {Pattern Recognition Letters},
+  year     = {2020},
+  volume   = {131},
+  pages    = {56-62},
+  issn     = {0167-8655},
+  doi      = {https://doi.org/10.1016/j.patrec.2019.12.001},
+  url      = {https://www.sciencedirect.com/science/article/pii/S0167865519303642},
+  abstract = {Deep learning models have been particularly successful with image recognition using Convolutional Neural Networks (CNN). However, the learning of a contrast invariance and rotation equivariance response may fail even with very deep CNNs or by large data augmentations in training. We were inspired by the V1 visual features of the mammalian visual system to emulate as much as possible the early visual system and add more invariant capacities to the CNN. We present a new quaternion local phase convolutional neural network layer encoding three local phases. We present two experimental setups: An image classification task with four contrast levels, and a linear regression task that predicts the rotation angle of an image. In sum, we obtain new patterns and feature representations for deep learning, which capture illumination invariance and a linear response to rotation angles.},
+}
+
+@Article{Eichler2017,
+  author        = {Eichler, Katharina and Li, Feng and Litwin-Kumar, Ashok and Park, Youngser and Andrade, Ingrid and Schneider-Mizell, Casey M and Saumweber, Timo and Huser, Annina and Eschbach, Claire and Gerber, Bertram and others},
+  title         = {The complete connectome of a learning and memory centre in an insect brain},
+  journal       = {Nature},
+  year          = {2017},
+  volume        = {548},
+  number        = {7666},
+  pages         = {175--182},
+  __markedentry = {[joseluis:6]},
+  publisher     = {Nature Publishing Group},
+}
+
+@Article{Eschbach2020,
+  author    = {Eschbach, Claire and Zlatic, Marta},
+  title     = {Useful road maps: studying Drosophila larva’s central nervous system with the help of connectomics},
+  journal   = {Current Opinion in Neurobiology},
+  year      = {2020},
+  volume    = {65},
+  pages     = {129--137},
+  publisher = {Elsevier},
+}
+
+@Article{Busto2010,
+  author    = {Busto, Germain U and Cervantes-Sandoval, Isaac and Davis, Ronald L},
+  title     = {Olfactory learning in Drosophila},
+  journal   = {Physiology},
+  year      = {2010},
+  volume    = {25},
+  number    = {6},
+  pages     = {338--346},
+  publisher = {American Physiological Society Bethesda, MD},
+}
+
+@Article{Durrieu2020,
+  author    = {Durrieu, Matthias and Wystrach, Antoine and Arrufat, Patrick and Giurfa, Martin and Isabel, Guillaume},
+  title     = {Fruit flies can learn non-elemental olfactory discriminations},
+  journal   = {Proceedings of the Royal Society B},
+  year      = {2020},
+  volume    = {287},
+  number    = {1938},
+  pages     = {20201234},
+  publisher = {The Royal Society},
+}
+
+@Article{Gkanias2022,
+  author    = {Gkanias, Evripidis and McCurdy, Li Yan and Nitabach, Michael N and Webb, Barbara},
+  title     = {An incentive circuit for memory dynamics in the mushroom body of Drosophila melanogaster},
+  journal   = {Elife},
+  year      = {2022},
+  volume    = {11},
+  pages     = {e75611},
+  publisher = {eLife Sciences Publications Limited},
+}
+
+@Article{Zhao2021,
+  author    = {Zhao, Chang and Widmer, Yves F and Diegelmann, S{\"o}ren and Petrovici, Mihai A and Sprecher, Simon G and Senn, Walter},
+  title     = {Predictive olfactory learning in Drosophila},
+  journal   = {Scientific reports},
+  year      = {2021},
+  volume    = {11},
+  number    = {1},
+  pages     = {1--17},
+  publisher = {Nature Publishing Group},
+}
+
+@Article{Izhikevich2003,
+  author    = {Izhikevich, Eugene M},
+  title     = {Simple model of spiking neurons},
+  journal   = {IEEE Transactions on neural networks},
+  year      = {2003},
+  volume    = {14},
+  number    = {6},
+  pages     = {1569--1572},
+  publisher = {IEEE},
+}
+
+@Article{Izhikevich2004,
+  author    = {Izhikevich, Eugene M},
+  title     = {Which model to use for cortical spiking neurons?},
+  journal   = {IEEE transactions on neural networks},
+  year      = {2004},
+  volume    = {15},
+  number    = {5},
+  pages     = {1063--1070},
+  publisher = {Ieee},
+}
+
+@Book{vonNeumann2012,
+  author    = {von Neumann, J. and Kurzweil, R.},
+  title     = {The Computer and the Brain},
+  year      = {2012},
+  series    = {The Silliman Memorial Lectures Series},
+  publisher = {Yale University Press},
+  isbn      = {9780300181111},
+  url       = {https://books.google.com.mx/books?id=hvPAUX0glAYC},
+  lccn      = {2011943281},
+}
+
+@Article{Izhikevich2007b,
+  author    = {Izhikevich, Eugene M},
+  title     = {Solving the distal reward problem through linkage of STDP and dopamine signaling},
+  journal   = {Cerebral cortex},
+  year      = {2007},
+  volume    = {17},
+  number    = {10},
+  pages     = {2443--2452},
+  publisher = {Oxford University Press},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

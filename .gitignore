@@ -1,0 +1,11 @@
+*.dat
+*.txt
+*.pdf
+*.jpeg
+*.ipynb
+
+/Protocol
+/Drosophila/Plots
+/Hopfield/Plots
+
+
