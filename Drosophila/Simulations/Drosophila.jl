@@ -12,7 +12,7 @@
 
 using LinearAlgebra
 using Distributions
-using Plots
+using StatsPlots
 using Hadamard
 using Random
 
@@ -379,6 +379,70 @@ function DotProduct(fly::Fly, matPat, Regime)
 
 Aux, fly.w[end]
 end
+
+
+# Learning Index 
+# Measure the Leaarning Index for a single fly, given by
+# LI = S(X) - S(Y)
+# where S(X) is the spike (or activity) for the pattern X. This is performed
+# for different regimenes
+
+function LearningIndex(fly::Fly, matPat, Regime)
+
+    LI = 0.0
+
+    if Regime == "E" #Elemental: A+ B-
+        
+        A = matPat[:, 1]
+        B = matPat[:, 2]
+
+        LI = PerceptronOutput(fly, A) - PerceptronOutput(fly, B)
+
+    elseif Regime == "2E" #Double Elemental: A+ B+ C-
+        A = matPat[:, 1]
+        C = matPat[:, 3]
+
+        LI = PerceptronOutput(fly, A) - PerceptronOutput(fly, C)
+
+    elseif Regime == "M" #Mixture: AB+ CD-
+        
+        AB = matPat[:, 5]
+        CD = matPat[:, end]
+
+        LI = PerceptronOutput(fly, AB) - PerceptronOutput(fly, CD)
+
+    elseif Regime == "O" #Overlap: #Overlap: AB+ BC-
+        
+        AB = matPat[:, 5]
+        BC = matPat[:, 7]
+
+        LI = PerceptronOutput(fly, AB) - PerceptronOutput(fly, BC)
+
+    elseif Regime == "N" #Negative Pattering: A+, B+, AB-
+       
+        A = matPat[:, 1]
+        AB = matPat[:, 5]
+
+        LI = PerceptronOutput(fly, A) - PerceptronOutput(fly, AB)
+
+    elseif Regime == "P" #Positive Pattering: AB+, A-, B-
+       
+        A = matPat[:, 1]
+        AB = matPat[:, 5]
+
+        LI = PerceptronOutput(fly, AB) - PerceptronOutput(fly, A)
+    
+    else Regime == "B" #Biconditional discrimination: AB+ CD+ AC- BD-
+       
+        AB = matPat[:, 5]
+        AC = matPat[:, 6]
+
+        LI = PerceptronOutput(fly, AB) - PerceptronOutput(fly, AC)
+
+    end 
+
+LI
+end
     
 
 # Simulation
@@ -438,4 +502,38 @@ function Simulation(numFly, numNeu, lRate,  actFun, patType, Regime, normed = fa
     end
 
 averDP./numFly , averBais./numFly, averOut./numFly, vecTime
+end
+
+function LISimulation(numFly, numNeu, lRate,  actFun, patType, numTrng, normed = false)
+
+    Regime = ["E" "M" "O" "N" "P" "B"]
+    trainType = "full"
+    matLI = Array{Float64}(undef, 0)
+
+
+    for r in Regime
+
+        matPat = Patterns(patType, numNeu, 4, normed)
+        auxLI = Array{Float64}(undef, 0)
+
+        for f in 1:numFly
+
+            fly = Fly(numNeu, lRate, actFun, normed)
+            BiasAdjustment(fly, patType)
+
+                for t in 1:numTrng 
+
+                    Conditioning(fly, matPat, r, trainType)
+
+                end
+
+            push!(auxLI, LearningIndex(fly, matPat, r))
+
+        end
+
+        matLI = vcat(matLI, auxLI)
+
+    end
+
+reshape(matLI, numFly, length(Regime))    
 end
