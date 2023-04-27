@@ -443,7 +443,70 @@ function LearningIndex(fly::Fly, matPat, Regime)
 
 LI
 end
+     
+
+function LearningIndex2(fly::Fly, matPat, Regime)
+
+    Sx = 0.0
+    Sy = 0.0
+
+    if Regime == "E" #Elemental: A+ B-
+        
+        Sx = fly.w' * matPat[:, 1]
+        Sy = fly.w' * matPat[:, 2]
+
+    elseif Regime == "2E" #Double Elemental: A+ B+ C-
+
+        Sx = fly.w' * matPat[:, 1]
+        Sy = fly.w' * matPat[:, 3]
+
+    elseif Regime == "M" #Mixture: AB+ CD-
+        
+        Sx = fly.w' * matPat[:, 5]
+        Sy = fly.w' * matPat[:, end]
+
+    elseif Regime == "O" #Overlap: #Overlap: AB+ BC-
+        
+        Sx = fly.w' * matPat[:, 5]
+        Sy = fly.w' * matPat[:, 7]
+
+    elseif Regime == "N" #Negative Pattering: A+, B+, AB-
+       
+        Sx = fly.w' * matPat[:, 1]
+        Sy = fly.w' * matPat[:, 5]
+
+    elseif Regime == "P" #Positive Pattering: AB+, A-, B-
+       
+        Sx = fly.w' * matPat[:, 5]
+        Sy = fly.w' * matPat[:, 1]
+
+    else Regime == "B" #Biconditional discrimination: AB+ CD+ AC- BD-
+       
+        Sx = fly.w' * matPat[:, 5]
+        Sy = fly.w' * matPat[:, 6]
+
+    end 
+
+
+    if Sx > 0
+
+        Sx =  1
+    else
+        Sx =  0
+    end
+
     
+    if Sy > 0
+
+        Sy =  1
+    else
+        Sy =  0
+    end
+
+Sx - Sy
+end
+
+
 
 # Simulation
 function IniCounters(numTrng, Regime)
@@ -465,9 +528,8 @@ function IniCounters(numTrng, Regime)
 end
 
 
-function Simulation(numFly, numNeu, lRate,  actFun, patType, Regime, normed = false)
+function Simulation(numFly, numNeu, lRate,  actFun, patType, Regime, numTrng, normed = false)
     
-    numTrng = 100
     averDP, averBais = IniCounters(numTrng + 1, Regime)
     averOut = copy(averDP)
     vecTime = Array{Int64}(undef, 0)
@@ -504,17 +566,20 @@ function Simulation(numFly, numNeu, lRate,  actFun, patType, Regime, normed = fa
 averDP./numFly , averBais./numFly, averOut./numFly, vecTime
 end
 
-function LISimulation(numFly, numNeu, lRate,  actFun, patType, numTrng, normed = false)
+function LISimulation(numFly, numNeu, lRate, actFun, patType, numTrng, normed = false)
 
     Regime = ["E" "M" "O" "N" "P" "B"]
-    trainType = "full"
+    trainType = "partial"
+    
     matLI = Array{Float64}(undef, 0)
+    matLI2 = Array{Float64}(undef, 0)
 
 
     for r in Regime
 
         matPat = Patterns(patType, numNeu, 4, normed)
         auxLI = Array{Float64}(undef, 0)
+        auxLI2 = Array{Float64}(undef, 0)
 
         for f in 1:numFly
 
@@ -528,12 +593,14 @@ function LISimulation(numFly, numNeu, lRate,  actFun, patType, numTrng, normed =
                 end
 
             push!(auxLI, LearningIndex(fly, matPat, r))
+            push!(auxLI2, LearningIndex2(fly, matPat, r))
 
         end
 
         matLI = vcat(matLI, auxLI)
+        matLI2 = vcat(matLI2, auxLI2)
 
     end
 
-reshape(matLI, numFly, length(Regime))    
+reshape(matLI, numFly, length(Regime)), reshape(matLI2, numFly, length(Regime))   
 end
