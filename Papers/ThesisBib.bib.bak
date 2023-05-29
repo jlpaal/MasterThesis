@@ -190,4 +190,72 @@
   publisher = {Oxford University Press},
 }
 
+@TechReport{novikoff1963convergence,
+  author      = {Novikoff, Albert B},
+  title       = {On convergence proofs for perceptrons},
+  institution = {STANFORD RESEARCH INST MENLO PARK CA},
+  year        = {1963},
+}
+
+@Book{hebb2005organization,
+  author    = {Hebb, Donald Olding},
+  title     = {The organization of behavior: A neuropsychological theory},
+  year      = {2005},
+  publisher = {Psychology press},
+}
+
+@Article{Hopfield,
+  author    = {Hopfield, John J},
+  title     = {Neural networks and physical systems with emergent collective computational abilities.},
+  journal   = {Proceedings of the national academy of sciences},
+  year      = {1982},
+  volume    = {79},
+  number    = {8},
+  pages     = {2554--2558},
+  publisher = {National Acad Sciences},
+}
+
+@Book{Marsland,
+  author    = {Marsland, Stephen},
+  title     = {Machine learning: an algorithmic perspective},
+  year      = {2015},
+  publisher = {CRC press},
+}
+
+@Book{Mehling,
+  author    = {Mehlig, B.},
+  title     = {Lecture Notes. Artificial Neural Networks.},
+  year      = {2018},
+  publisher = {Department of Physics, University of Gothenburg},
+}
+
+@Article{Rosenblatt,
+  author    = {Rosenblatt, Frank},
+  title     = {The perceptron: a probabilistic model for information storage and organization in the brain.},
+  journal   = {Psychological review},
+  year      = {1958},
+  volume    = {65},
+  number    = {6},
+  pages     = {386},
+  publisher = {American Psychological Association},
+}
+
+@Article{vyas,
+  author    = {Vyas, Manan and Guhr, T and Seligman, TH},
+  title     = {Multivariate analysis of short time series in terms of ensembles of correlation matrices},
+  journal   = {Scientific reports},
+  year      = {2018},
+  volume    = {8},
+  number    = {1},
+  pages     = {14620},
+  publisher = {Nature Publishing Group UK London},
+}
+
+@Article{Borot,
+  author  = {Borot, Ga{\"e}tan},
+  title   = {An introduction to random matrix theory},
+  journal = {arXiv preprint arXiv:1710.10792},
+  year    = {2017},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
