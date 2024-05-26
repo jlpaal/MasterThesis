@@ -2,10 +2,11 @@
 *.txt
 *.pdf
 *.jpeg
-*.ipynb
+*.jld
+*.gif
 
 /Protocol
 /Drosophila/Plots
 /Hopfield/Plots
-
+/Avances
 

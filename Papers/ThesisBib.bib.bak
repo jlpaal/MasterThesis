@@ -11,7 +11,7 @@
   publisher = {Springer},
 }
 
-@Article{Emmert2020,
+@Article{Emmert,
   author    = {Frank Emmert-Streib and Zhen Yang and Han Feng and Han Feng and Shailesh Tripathi and Shailesh Tripathi and Matthias Dehmer and Matthias Dehmer and Matthias Dehmer},
   title     = {An Introductory Review of Deep Learning for Prediction Models With Big Data},
   journal   = {Frontiers in Artificial Intelligence},
@@ -26,7 +26,7 @@
   publisher = {Frontiers Media S.A.},
 }
 
-@Article{Eugene2003,
+@Article{Eugene,
   author  = {Eugene, M},
   title   = {Izhikevich: Simple Model of Spiking Neurons},
   journal = {IEEE Transactions on Neural Networks},
@@ -35,7 +35,7 @@
   number  = {6},
 }
 
-@Article{Young2011,
+@Article{Young,
   author    = {Young, JM and Wessnitzer, J and Armstrong, JD and Webb, Barbara},
   title     = {Elemental and non-elemental olfactory learning in Drosophila},
   journal   = {Neurobiology of learning and memory},
@@ -68,7 +68,7 @@
   publisher = {SIAM},
 }
 
-@Article{Moya2020,
+@Article{Moya,
   author   = {E. Ulises Moya-Sánchez and Sebastiá Xambó-Descamps and Abraham {Sánchez Pérez} and Sebastián Salazar-Colores and Jorge Martínez-Ortega and Ulises Cortés},
   title    = {A bio-inspired quaternion local phase CNN layer with contrast invariance and linear sensitivity to rotation angles},
   journal  = {Pattern Recognition Letters},
@@ -81,7 +81,7 @@
   abstract = {Deep learning models have been particularly successful with image recognition using Convolutional Neural Networks (CNN). However, the learning of a contrast invariance and rotation equivariance response may fail even with very deep CNNs or by large data augmentations in training. We were inspired by the V1 visual features of the mammalian visual system to emulate as much as possible the early visual system and add more invariant capacities to the CNN. We present a new quaternion local phase convolutional neural network layer encoding three local phases. We present two experimental setups: An image classification task with four contrast levels, and a linear regression task that predicts the rotation angle of an image. In sum, we obtain new patterns and feature representations for deep learning, which capture illumination invariance and a linear response to rotation angles.},
 }
 
-@Article{Eichler2017,
+@Article{Eichler,
   author        = {Eichler, Katharina and Li, Feng and Litwin-Kumar, Ashok and Park, Youngser and Andrade, Ingrid and Schneider-Mizell, Casey M and Saumweber, Timo and Huser, Annina and Eschbach, Claire and Gerber, Bertram and others},
   title         = {The complete connectome of a learning and memory centre in an insect brain},
   journal       = {Nature},
@@ -103,7 +103,7 @@
   publisher = {Elsevier},
 }
 
-@Article{Busto2010,
+@Article{Busto,
   author    = {Busto, Germain U and Cervantes-Sandoval, Isaac and Davis, Ronald L},
   title     = {Olfactory learning in Drosophila},
   journal   = {Physiology},
@@ -114,7 +114,7 @@
   publisher = {American Physiological Society Bethesda, MD},
 }
 
-@Article{Durrieu2020,
+@Article{Durrieu,
   author    = {Durrieu, Matthias and Wystrach, Antoine and Arrufat, Patrick and Giurfa, Martin and Isabel, Guillaume},
   title     = {Fruit flies can learn non-elemental olfactory discriminations},
   journal   = {Proceedings of the Royal Society B},
@@ -125,7 +125,7 @@
   publisher = {The Royal Society},
 }
 
-@Article{Gkanias2022,
+@Article{Gkanias,
   author    = {Gkanias, Evripidis and McCurdy, Li Yan and Nitabach, Michael N and Webb, Barbara},
   title     = {An incentive circuit for memory dynamics in the mushroom body of Drosophila melanogaster},
   journal   = {Elife},
@@ -135,7 +135,7 @@
   publisher = {eLife Sciences Publications Limited},
 }
 
-@Article{Zhao2021,
+@Article{Zhao,
   author    = {Zhao, Chang and Widmer, Yves F and Diegelmann, S{\"o}ren and Petrovici, Mihai A and Sprecher, Simon G and Senn, Walter},
   title     = {Predictive olfactory learning in Drosophila},
   journal   = {Scientific reports},
@@ -168,7 +168,7 @@
   publisher = {Ieee},
 }
 
-@Book{vonNeumann2012,
+@Book{vonNeumann,
   author    = {von Neumann, J. and Kurzweil, R.},
   title     = {The Computer and the Brain},
   year      = {2012},
@@ -190,14 +190,14 @@
   publisher = {Oxford University Press},
 }
 
-@TechReport{novikoff1963convergence,
+@TechReport{Novikoff,
   author      = {Novikoff, Albert B},
   title       = {On convergence proofs for perceptrons},
   institution = {STANFORD RESEARCH INST MENLO PARK CA},
   year        = {1963},
 }
 
-@Book{hebb2005organization,
+@Book{Hebb,
   author    = {Hebb, Donald Olding},
   title     = {The organization of behavior: A neuropsychological theory},
   year      = {2005},
@@ -240,7 +240,7 @@
   publisher = {American Psychological Association},
 }
 
-@Article{vyas,
+@Article{Vyas,
   author    = {Vyas, Manan and Guhr, T and Seligman, TH},
   title     = {Multivariate analysis of short time series in terms of ensembles of correlation matrices},
   journal   = {Scientific reports},
@@ -256,6 +256,264 @@
   title   = {An introduction to random matrix theory},
   journal = {arXiv preprint arXiv:1710.10792},
   year    = {2017},
+}
+
+@Article{celebi,
+  author    = {Celebi, M Emre and Kingravi, Hassan A},
+  title     = {Deterministic initialization of the k-means algorithm using hierarchical clustering},
+  journal   = {International Journal of Pattern Recognition and Artificial Intelligence},
+  year      = {2012},
+  volume    = {26},
+  number    = {07},
+  pages     = {1250018},
+  publisher = {World Scientific},
+}
+
+@Article{Mnist,
+  author    = {Deng, Li},
+  title     = {The mnist database of handwritten digit images for machine learning research},
+  journal   = {IEEE Signal Processing Magazine},
+  year      = {2012},
+  volume    = {29},
+  number    = {6},
+  pages     = {141--142},
+  publisher = {IEEE},
+}
+
+@Article{Perez,
+  author    = {Perez, Patricio},
+  title     = {Memory melting in neural networks},
+  journal   = {Physical Review A},
+  year      = {1989},
+  volume    = {39},
+  number    = {8},
+  pages     = {4303},
+  publisher = {APS},
+}
+
+@Article{McPitts,
+  author    = {McCulloch, Warren S and Pitts, Walter},
+  title     = {A logical calculus of the ideas immanent in nervous activity},
+  journal   = {The bulletin of mathematical biophysics},
+  year      = {1943},
+  volume    = {5},
+  pages     = {115--133},
+  publisher = {Springer},
+}
+
+@Article{Levi,
+  author    = {Levi-Montalcini, Rita},
+  title     = {The nerve growth factor 35 years later},
+  journal   = {Science},
+  year      = {1987},
+  volume    = {237},
+  number    = {4819},
+  pages     = {1154--1162},
+  publisher = {American Association for the Advancement of Science},
+}
+
+@Article{HodHux,
+  author    = {Hodgkin, Alan Lloyd and Huxley, Andrew Fielding},
+  title     = {Propagation of electrical signals along giant nerve fibres},
+  journal   = {Proceedings of the Royal Society of London. Series B-Biological Sciences},
+  year      = {1952},
+  volume    = {140},
+  number    = {899},
+  pages     = {177--183},
+  publisher = {The Royal Society London},
+}
+
+@Article{Tibshirani,
+  author    = {Tibshirani, Robert and Walther, Guenther and Hastie, Trevor},
+  title     = {Estimating the number of clusters in a data set via the gap statistic},
+  journal   = {Journal of the Royal Statistical Society: Series B (Statistical Methodology)},
+  year      = {2001},
+  volume    = {63},
+  number    = {2},
+  pages     = {411--423},
+  publisher = {Wiley Online Library},
+}
+
+@Article{Rosenblatt1060,
+  author    = {Rosenblatt, Frank},
+  title     = {Perceptron simulation experiments},
+  journal   = {Proceedings of the IRE},
+  year      = {1960},
+  volume    = {48},
+  number    = {3},
+  pages     = {301--309},
+  publisher = {IEEE},
+}
+
+@Misc{Weinberger,
+  author = {Kilian Q. Weinberger},
+  editor = {MIT},
+  title  = {Machine Learning for Intelligent Systems},
+  year   = {2018},
+}
+
+@Article{Rumelhart,
+  author    = {Rumelhart, David E and Hinton, Geoffrey E and Williams, Ronald J},
+  title     = {Learning representations by back-propagating errors},
+  journal   = {nature},
+  year      = {1986},
+  volume    = {323},
+  number    = {6088},
+  pages     = {533--536},
+  publisher = {Nature Publishing Group UK London},
+}
+
+@Article{Busto2010,
+  author    = {Busto, Germain U and Cervantes-Sandoval, Isaac and Davis, Ronald L},
+  title     = {Olfactory learning in Drosophila},
+  journal   = {Physiology},
+  year      = {2010},
+  volume    = {25},
+  number    = {6},
+  pages     = {338--346},
+  publisher = {American Physiological Society Bethesda, MD},
+}
+
+@Article{Schwaerzel,
+  author    = {Schwaerzel, Martin and Monastirioti, Maria and Scholz, Henrike and Friggi-Grelin, Florence and Birman, Serge and Heisenberg, Martin},
+  title     = {Dopamine and octopamine differentiate between aversive and appetitive olfactory memories in Drosophila},
+  journal   = {Journal of Neuroscience},
+  year      = {2003},
+  volume    = {23},
+  number    = {33},
+  pages     = {10495--10502},
+  publisher = {Soc Neuroscience},
+}
+
+@Article{Zhao2019,
+  author    = {Zhao, Bohan and Sun, Jiameng and Zhang, Xuchen and Mo, Han and Niu, Yijun and Li, Qian and Wang, Lianzhang and Zhong, Yi},
+  title     = {Long-term memory is formed immediately without the need for protein synthesis-dependent consolidation in Drosophila},
+  journal   = {Nature communications},
+  year      = {2019},
+  volume    = {10},
+  number    = {1},
+  pages     = {4550},
+  publisher = {Nature Publishing Group UK London},
+}
+
+@Article{Turner,
+  author    = {Turner, Glenn C and Bazhenov, Maxim and Laurent, Gilles},
+  title     = {Olfactory representations by Drosophila mushroom body neurons},
+  journal   = {Journal of neurophysiology},
+  year      = {2008},
+  volume    = {99},
+  number    = {2},
+  pages     = {734--746},
+  publisher = {American Physiological Society},
+}
+
+@Article{MarPas,
+  author  = {Marcenko, V. A., and Pastur, L.A.},
+  title   = {{Distribution of eigenvalues for some sets of random matrices}},
+  journal = {Mathematics of the USSR-Sbornik},
+  year    = {1967},
+  volume  = {1},
+  number  = {4},
+  doi     = {https://iopscience.iop.org/article/10.1070/SM1967v001n04ABEH001994/pdf},
+}
+
+@Article{Wishart,
+  author  = {Wishart, J.},
+  title   = {{The generalised product moment distribution in samples from a normal multivariate population}},
+  journal = {Biometrika},
+  year    = {1928},
+  volume  = {20A},
+  number  = {1/2},
+  pages   = {32-52},
+  doi     = {\url{10.2307/2331939}},
+}
+
+@Article{Ising,
+  author  = {E. Ising},
+  title   = {Beitrag zur Theorie des Ferromagnetismus},
+  journal = {Zeitschrift fur Physik},
+  year    = {1925},
+  volume  = {31},
+  month   = {Feb},
+  pages   = {253-258},
+}
+
+@Article{Zhang,
+  author    = {Yi-Kuo Yu and Yi-Cheng Zhang},
+  title     = {On the Anti-Wishart distribution},
+  journal   = {Physics A: Statistical Mechanics and its Applications},
+  year      = {2002},
+  volume    = {312},
+  month     = {sep},
+  pages     = {1--22},
+  doi       = {https://doi.org/10.1016/S0378-4371(02)00739-2},
+  publisher = {Elseiver},
+}
+
+@Article{Eynard,
+  author  = {Bertrand Eynard, Taro Kimura \& Sylvain Ribault},
+  title   = {{Random matrices}},
+  journal = {Mathematical Physics},
+  year    = {2018},
+  doi     = {arXiv:1510.04430},
+}
+
+@Article{Janik,
+  author    = {Romuald A Janik and Maciej A Nowak},
+  title     = {Wishart and anti-Wishart random matrices},
+  journal   = {Journal of Physics A: Mathematical and General},
+  year      = {2003},
+  volume    = {36},
+  number    = {12},
+  month     = {mar},
+  pages     = {3629--3637},
+  doi       = {10.1088/0305-4470/36/12/343},
+  url       = {https://doi.org/10.10882F0305-44702F362F122F343},
+  publisher = {{IOP} Publishing},
+}
+
+@Article{macqueen,
+  author       = {MacQueen, James and others},
+  title        = {Some methods for classification and analysis of multivariate observations},
+  year         = {1967},
+  volume       = {1},
+  number       = {14},
+  pages        = {281--297},
+  booktitle    = {Proceedings of the fifth Berkeley symposium on mathematical statistics and probability},
+  organization = {Oakland, CA, USA},
+}
+
+@Article{Lloyd,
+  author    = {Lloyd, Stuart},
+  title     = {Least squares quantization in PCM},
+  journal   = {IEEE transactions on information theory},
+  year      = {1982},
+  volume    = {28},
+  number    = {2},
+  pages     = {129--137},
+  publisher = {IEEE},
+}
+
+@Article{hartigan,
+  author    = {Hartigan, John A and Wong, Manchek A},
+  title     = {Algorithm AS 136: A k-means clustering algorithm},
+  journal   = {Journal of the royal statistical society. series c (applied statistics)},
+  year      = {1979},
+  volume    = {28},
+  number    = {1},
+  pages     = {100--108},
+  publisher = {JSTOR},
+}
+
+@InProceedings{vinayak,
+  author       = {Vinayak and Seligman, Thomas H},
+  title        = {Time series, correlation matrices and random matrix models},
+  booktitle    = {AIP Conference Proceedings},
+  year         = {2014},
+  volume       = {1575},
+  number       = {1},
+  organization = {American Institute of Physics},
+  pages        = {196--217},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

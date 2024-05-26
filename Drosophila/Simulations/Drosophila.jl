@@ -15,8 +15,9 @@ using Distributions
 using StatsPlots
 using Hadamard
 using Random
+using Statistics
 
-#Elements in the fly (like a Object)
+# Elements in the fly (like a Object)
 # n is the number of neurons.
 # lrate is the learning rate.
 # ActFun is for the activation function that the fly use for its learning.
@@ -43,10 +44,11 @@ end
 
 
 # Activation function
-# We have 3 activations Functions:
+# We have 4 activations Functions:
 #   Heaviside for {0, 1}
 #   atan(z) in the range [0, 1]
 #   logistic regresion in the range [0, 1]
+#   tanh in the range [0,1]
 function ActFunction(fly::Fly, z)
     ActFun = fly.ActFun
     
@@ -61,6 +63,10 @@ function ActFunction(fly::Fly, z)
     elseif ActFun == "atan" 
     
         return atan(z)/pi + 0.5
+    
+    elseif ActFun == "tanh" || ActFun == "th" 
+    
+        return (tanh(z) + 1)/2
     
     elseif ActFun == "logistic" || ActFun == "logi" 
     
@@ -222,7 +228,7 @@ function Trainer(fly::Fly, matPat, train, trainType)
 
     end
 
-    if trainType == "partial"
+    if trainType == "oR" || trainType == "onlyReinforcement"
         for i in 1:l
             if train[i] == 1
 
@@ -234,6 +240,17 @@ function Trainer(fly::Fly, matPat, train, trainType)
         end
     end
 
+    if trainType == "oP" || trainType == "onlyPunishment"
+        for i in 1:l
+            if train[i] == 0
+
+                trainPat = matPat[:,i]
+                y = PerceptronOutput(fly, trainPat)
+                # fly.w = fly.w + fly.lrate*(0 - y)*trainPat
+                fly.w = fly.w - fly.lrate*y*trainPat
+            end
+        end
+    end
 
     if fly.w != w0
 
@@ -253,7 +270,7 @@ end
 # Normalize the patterns
 function NormPatterns(matPat)
 
-    for i in 1: length(matPat[1,:])
+    for i in 1:length(matPat[1,:])
     
         matPat[1:end-1,i] = normalize(matPat[1:end-1,i]) 
     
