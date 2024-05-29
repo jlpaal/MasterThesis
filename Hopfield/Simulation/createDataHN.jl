@@ -6,12 +6,18 @@ K = round.(Int, [0.5*N*0.13, N*0.13, 1.5*N*0.13])
 numSim = 100 #Number of simulations
 numExpe = 100; #Number of experiment in the simulation.
 
-numMC = 7 #Number of MCTS 
-stepSave = collect(0:1:numMC);#Simulations tu save
+numMC = 14 #Number of MCTS 
+stepSave = collect(0:2:numMC);#Simulations tu save
 stepSave[1] = 1
 
 randEigenValMat, randCorrMat = SimManyK(RandWeigthMatrix, RandIniStates, K, SimulationOne);
 println("KWH")
+
+
+numMC = 7 #Number of MCTS 
+stepSave = collect(0:1:numMC);#Simulations tu save
+stepSave[1] = 1
+
 orthoEigenValMat, orthoCorrMat = SimManyK(OrthoWeigthMatrix, RandIniStates, K, SimulationOne);
 println("KWH")
 

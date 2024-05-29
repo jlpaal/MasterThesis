@@ -265,6 +265,15 @@ function PlotScatterCluster(clusResults, numSim, numMCTS, numKPat)
     xticksPos = 0:numSim*numKPat:lAssigments
     yticksPos = 1:1:numClusters
     xticksCustom =(xticksPos, string.(0:numMCTS-1))
+
+    if numMCTS == 14
+        xticksCustom =(xticksPos, string.(0:2:numMCTS))
+    elseif  numMCTS == 21
+        xticksCustom =(xticksPos, string.(0:3:numMCTS))
+    elseif  numMCTS == 35
+        xticksCustom =(xticksPos, string.(0:5:numMCTS))
+    end
+
     scatter!(dx, vecAssigments, label = false, grid = true, gridalpha=1,
             markercolor =:blue, marker = auxCorrections, markersize = 6,
             tickfontsize = 14, labelfontsize = 20,    
