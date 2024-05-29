@@ -551,5 +551,3 @@ function DotProdoctConvergence(numFly, actFun, patType, Regime, numTrng, normed 
 
 matAver, sqrt.(matStdDes)
 end
-
-
