@@ -273,13 +273,12 @@ function PlotScatterCluster(clusResults, numSim, numMCTS, numKPat)
     elseif  numMCTS == 35
         xticksCustom =(xticksPos, string.(0:5:numMCTS))
     end
-
+                                                
     scatter!(dx, vecAssigments, label = false, grid = true, gridalpha=1,
             markercolor =:blue, marker = auxCorrections, markersize = 6,
             tickfontsize = 14, labelfontsize = 20,    
             xlabel = "MCTS", xticks = xticksCustom,
             ylabel = "Clusters", yticks = yticksPos)
-
     
     display(Plots.plot(p))
 
@@ -367,17 +366,17 @@ clusRes
 
 end
 
-function SwapCluster(clusRes, c1, c2)
+function SwapCluster(clustResults, c1, c2)
 
-    positionCluster1 = findall(x -> x == c1, assignments(clusRes))
-    positionCluster2 = findall(x -> x == c2, assignments(clusRes))
+    positionCluster1 = findall(x -> x == c1, assignments(clustResults))
+    positionCluster2 = findall(x -> x == c2, assignments(clustResults))
 
-    assignments(clusRes)[positionCluster1] .= c2
-    assignments(clusRes)[positionCluster2] .= c1
+    assignments(clustResults)[positionCluster1] .= c2
+    assignments(clustResults)[positionCluster2] .= c1
 
     clustResults.centers[:,c1], clustResults.centers[:,c2] = clustResults.centers[:,c2], clustResults.centers[:,c1] 
 
-    clusRes
+    clustResults
 end
 
 function ElbowMethod(matData, numClusters)
@@ -424,6 +423,41 @@ function ElbowMethod(matData, numClusters)
 
 end
 
+function SuccessMatrix(clusterResults, assignmentsToCount)
+
+    matAssignments = reshape(clusterResults.assignments, 300, 8)
+    matAssignmentsEndTime = reshape(matAssignments[:, end], 100, 3)
+    lengthAssignmentsTC = length(assignmentsToCount)
+    matCountAssignments = zeros(3, lengthAssignmentsTC + 1)
+
+    # Counter assigments
+    for k in 1:3 
+        for c in 1:lengthAssignmentsTC
+            matCountAssignments[k, c] = count(==(assignmentsToCount[c]),  matAssignmentsEndTime[:,k])
+        end
+        matCountAssignments[k, end] = 100 - sum(matCountAssignments[k, :]) 
+    end
+
+    matCountAssignments = matCountAssignments./100
+
+    # Plot the success matrix
+    xlabel = [L"\gamma_{k50}" L"\gamma_{k100}" L"\gamma_{k150}" L"\gamma_{other}"]
+    ylabel = [L"k = 50\%" L"k = 100\%" L"k = 150\%"]
+    p = heatmap(matCountAssignments, color =:BuPu, 
+            tickfontsize = 14, labelfontsize = 20,
+            xticks = (1:4, xlabel),
+            yticks = (1:3, ylabel))
+    fontsize = 14
+    nrow, ncol = size(matCountAssignments)
+    ann = [(j, i, text(round(matCountAssignments[i,j], digits=2), 
+            fontsize, (matCountAssignments[i,j] <= 0.7 ? :black : :white), :center))
+            for i in 1:nrow for j in 1:ncol]
+    annotate!(ann, linecolor=:white)
+
+    display(Plots.plot(p))
+
+
+end
 
 function SimulationClusterForMCS(numNeurons, numPatterns, numExp, numMC, numSim)
     
