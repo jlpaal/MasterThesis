@@ -286,6 +286,7 @@ function PlotEvaPI(numNeu, patType, trainType, zoom = false)
         plot!(lrB, pB, label = false, ribbon = eB, color = "#ff0000",  fillalpha = 0.2)
 
         plot!(learnRate, matMeanPI', marker = :circle, palette = thesis, legendtitle = L"Regimen", 
+        markersize = 7, legendfontsize=14,
         minorgrid = true, legend = lvalue, label = Regimen, 
         xlabel = L"\eta", xticks = vecTicks,
         ylabel = L"PI", ylim = (-1,1)) 
@@ -339,6 +340,7 @@ function PlotEvaPI(numNeu, patType, trainType, zoom = false)
         plot!(lrB, pB, label = false, ribbon = eB, color = "#ff0000",  fillalpha = 0.2)
 
         plot!(learnRate, matMeanPI', marker = :circle, palette = thesis, 
+        markersize = 5, legendfontsize=10,
         minorgrid = true, label = false, 
         xlabel = L"\eta", xticks = vecTicks,
         ylabel = L" PI ", ylim = (-1,1)) 

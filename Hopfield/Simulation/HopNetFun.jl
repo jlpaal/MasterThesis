@@ -130,7 +130,7 @@ end
 # Asynchronous updating to recover patterns for a set of initial states
 # Return a Matrix with all initials states, middle States and final State
 
-function AsynRecovery(IniStates,WMat,M, Save)
+function AsynRecovery(IniStates, WMat, M, Save)
 LSave=length(Save)
 Exp=length(IniStates[1,:])
 N=length(IniStates[:,1])
@@ -346,7 +346,7 @@ IniFre = zeros(Int64,Nm+1,K)
         end
 
  end
-sum(PDist),Exp-sum(PDist)
+sum(PDist), Exp-sum(PDist)
 end
 
 # Count the frecuency of states for a given procentage

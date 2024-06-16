@@ -36,7 +36,7 @@ function Simulation(WeigthMatrix, IniStates)
     end
     
 
-    for t in 1:length(stepSave) 
+    for t in 1:length(Lo) 
 
         for i in 1:numExpe, j in i:numExpe
             eigDistMat[i,j,t] = sum(abs.(eigVal[:,t,i] - eigVal[:,t,j]))
@@ -502,3 +502,62 @@ function SwapClustersFrequency(matFreq)
     end
 matResu
 end
+
+function NumericalNetworkCapacity(numNeurons)
+
+    jump = Int(numNeurons/20)
+    veckPatterns = collect(2:jump:numNeurons)
+    numExperiments = 10
+    numMC = round(1.3*numNeurons^(2/5)) + 10 #Number of MCTS 
+    stepSave = [1, numMC]
+    vecRecovery = Array{Float64}(undef,0)
+
+    for k in veckPatterns
+        totRecovery = 0.0
+    
+        for i in 1:10
+            matWeigth,matPat = RandWeigthMatrix(numNeurons, k) #return the Weigth matrix and patterns.
+            X0 = RandIniStates(numNeurons, numExperiments) 
+            xStates, Times = AsynRecovery(X0, matWeigth, numMC, stepSave);
+            totRecovery += Frequency(xStates[:,:,1], xStates[:,:,end], matPat)[1]
+        end
+    
+        push!(vecRecovery, totRecovery)
+    end
+
+    vecRecovery = vecRecovery./(10*numExperiments) 
+
+    saveData = hcat(veckPatterns, vecRecovery)
+    save("NumericalNetworkCapacity$numNeurons.jld", "netwrokCapacity", saveData)
+
+    saveData
+end
+
+function ProbabilityEquilibrium(numNeurons, numPatterns)
+    kPatterns = collect(2:numPatterns)
+    numSimulations = 100
+    vecEquilibrium = zeros(length(kPatterns));
+
+    for k in kPatterns
+
+        for s in 1:numSimulations
+            matWeigth,matPat = RandWeigthMatrix(numNeurons, k) 
+            
+            vecAux = Array{Int64}(undef,0)
+            for nk in 1:k
+                push!(vecAux, CheckEquilibrium(matWeigth, matPat[:, nk]))
+            end
+            vecEquilibrium[k-1] += count(==(0), vecAux)/k
+    
+        end
+    end
+
+    vecEquilibrium = vecEquilibrium./numSimulations
+
+    saveData = hcat(kPatterns, vecEquilibrium)
+    save("VerifyEqui$numNeurons.jld", "dataEquilibrium", saveData)
+
+saveData
+end
+
+
